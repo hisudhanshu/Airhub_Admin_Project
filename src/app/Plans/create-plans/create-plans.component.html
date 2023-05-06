@@ -1,0 +1,325 @@
+<main id="main" class="main">
+    <div class="pagetitle">
+    </div>
+    <section class="section">
+       <div class="row">
+          <div class="col-lg-12">
+             <div class="card">
+                <div class="card-body">
+                   
+                   <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid">
+                      <a class="container-fluid"><strong><b><h1 class="card-title"><strong>Plan</strong> Create</h1></b></strong></a>
+                      
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                          <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"></a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#"></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </nav><br>
+                   <div class="row">
+                     <div class="col-lg-12">
+
+        <div class="row page-wrapper-topbar align-items-center">
+            <div class="col">
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="col-xl-12 col-sm-12">
+                <form class="ng-pristine ng-valid ng-valid-step">
+                    <div class="row main-form-wrapper" id="create-plan">
+                        <div class="col-md-6">
+                            <label><strong>Type</strong></label>
+                            <div class="input-radio-btn-main-wrapper row">
+                                <div class="wrapper col"><br>
+                                    <input type="radio" name="type" id="local" value="Local" checked="checked" ng-click="getType('Local')">
+                                    <label><strong>Local</strong></label>
+                                </div>
+                                <div class="wrapper col"><br>
+                                    <input type="radio" name="type" id="roaming" value="Roaming" ng-click="getType('Roaming')">
+                                    <label><strong>Roaming</strong></label>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 form-group">
+                            <label for="planClass"><strong>Plan Class</strong></label>
+                            <div class="input-group">
+                                <select class="form-control" id="planClass" name="planClass" onchange="plan(this.value);">
+                                    <option value="">--Select--</option>
+                                    <option value="data">Data</option>
+                                    <option value="voicedata">Voice and Data</option>
+                                    <option value="voice">Voice only</option>
+                                    <option value="sms">SMS only</option>
+                                    <!-- Add more options as needed -->
+                                </select>
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="bi bi-caret-down-fill"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3" id="planvoiceanddata" style="display:none">
+                            <label>Voice Minutes </label>
+                            <input ng-model="viceminutes" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Enter Minutes">
+                        </div>
+						
+                        <div class="col-md-6">
+                            <br>
+                            <label><strong>Plan source</strong></label>
+                            <div class="input-group">
+                                <select class="form-control" id="txtplansource">
+                                    <option value="">--Select--</option>
+                                    <option value="1">In House</option>
+                                    <option value="2">IIJ API</option>
+                                    <option value="3">H2O</option>
+                                </select>
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="bi bi-caret-down-fill"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <br>
+                            <label><strong>Duration Type</strong></label>
+                            <div class="input-group">
+                                <select class="form-control ng-pristine ng-untouched ng-valid ng-empty" ng-model="travellertype" id="travellertype">
+                                    <option value="" selected="selected">--Select--</option>
+                                    <option value="1">Traveller Plan</option>
+                                    <option value="2">Long Stay Plan</option>
+                                    <option value="3">Monthly Plan</option>
+                                </select>
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="bi bi-caret-down-fill"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="col-md-6"><br>
+                            <label><strong>Plan Name</strong></label>
+                            <input class="form-control ng-pristine ng-untouched ng-valid ng-empty" id="planId" ng-model="planId" type="hidden" autocomplete="off">
+                            <input type="text" name="plan-name" class="form-control ng-pristine ng-untouched ng-valid ng-empty" ng-model="planName" placeholder="Enter Plan Name" id="txtplanName">
+                        </div>
+                        <div class="col-md-6"><br>
+                            <label><strong>Supplier</strong></label>
+                            
+                        <div class="input-group">
+                            <select class="form-control ng-pristine ng-untouched ng-valid ng-empty" name="supplier" ng-model="supplier" id="txtsupplier">
+                                <option value="" selected="selected">--Select--</option>
+                                <!--<option class="">Vodafone</option>-->
+                                <!-- ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="37" class="ng-binding ng-scope"></option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="24" class="ng-binding ng-scope">3HK</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="9" class="ng-binding ng-scope">Airtel</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="28" class="ng-binding ng-scope">AIS</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="5" class="ng-binding ng-scope">AIS _ Regional</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="44" class="ng-binding ng-scope">APEX</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="21" class="ng-binding ng-scope">Digital Republic</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="4" class="ng-binding ng-scope">DTAC_ Global</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="25" class="ng-binding ng-scope">GMSL</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="38" class="ng-binding ng-scope">H2O</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="18" class="ng-binding ng-scope">IIJ</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="27" class="ng-binding ng-scope">ILIAD Italia</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="35" class="ng-binding ng-scope">Jody and Milica</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="1" class="ng-binding ng-scope">Larry</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="2" class="ng-binding ng-scope">Larry 1</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="22" class="ng-binding ng-scope">Laurent</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="19" class="ng-binding ng-scope">LGU+</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="12" class="ng-binding ng-scope">Mobilink Telecommunication</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="11" class="ng-binding ng-scope">Mobilink Telecommunications</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="43" class="ng-binding ng-scope">O2/ABZORB</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="40" class="ng-binding ng-scope">O2/CZK</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="29" class="ng-binding ng-scope">O2/SCG</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="8" class="ng-binding ng-scope">Ooredoo</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="42" class="ng-binding ng-scope">Phone Box</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="32" class="ng-binding ng-scope">Quardcell</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="16" class="ng-binding ng-scope">Rex</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="17" class="ng-binding ng-scope">Roamability</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="3" class="ng-binding ng-scope">Roamability</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="36" class="ng-binding ng-scope">Rom</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="7" class="ng-binding ng-scope">SARAPORN</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="39" class="ng-binding ng-scope">SCG/O2</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="30" class="ng-binding ng-scope">Singtell</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="6" class="ng-binding ng-scope">Smart</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="26" class="ng-binding ng-scope">Smart Axiata</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="31" class="ng-binding ng-scope">T Star</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="33" class="ng-binding ng-scope">Telna</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="10" class="ng-binding ng-scope">test</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="23" class="ng-binding ng-scope">Test Country Do Not Buy Sudipta</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="13" class="ng-binding ng-scope">Test Supplier Sudipta</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="15" class="ng-binding ng-scope">TripRoaming</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="41" class="ng-binding ng-scope">UAE Etisalat</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="34" class="ng-binding ng-scope">UR.SG</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="45" class="ng-binding ng-scope">Verizon</option><!-- end ngRepeat: option in vendorlist --><option ng-repeat="option in vendorlist" value="20" class="ng-binding ng-scope">Zain</option><!-- end ngRepeat: option in vendorlist -->
+                            </select>
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i class="bi bi-caret-down-fill"></i>
+                                </span>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col-md-3"><br>
+                            <label><strong>Plan Validity Type</strong></label>
+                            <div class="input-group">
+                            
+                            <select class="form-control ng-pristine ng-untouched ng-valid ng-empty" ng-model="validitytype" id="txtdataallowancetype">
+                                <option value="" selected="selected">--Select--</option>
+                                <option value="Days">Days</option>
+                                <option value="Year">Year</option>
+                                <option value="Month">Month</option>
+                            </select>
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i class="bi bi-caret-down-fill"></i>
+                                </span>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col-md-3"><br>
+                            <label><strong>Plan Validity</strong></label>
+                            <input type="number" ng-model="validity" name="plan-validity-days" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Enter Validity" id="txtvalidity">
+                        </div>
+
+                        <div class="col-md-6"><br>
+                            <label><strong>Buying Cost</strong></label>
+                            <div class="inline-text-select-form">
+                                <div class="input-group">
+                                <input type="number" class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-step" ng-model="BuyingCost" name="buying-cost" id="buyingcost" placeholder="Enter Buying Cost" step="any"> &nbsp; &nbsp; <!-- Add some space between the two dropdown menus -->
+                                <select class="form-control max-w-100 ng-pristine ng-untouched ng-valid ng-empty" ng-model="ddlCurrency" id="buyingcostcurrency"> &nbsp; &nbsp; <!-- Add some space between the two dropdown menus -->
+                                    <option value="" selected="selected">--Select--</option>
+                                    <!-- ngRepeat: r in currencylist  --><option ng-repeat="r in currencylist " value="1" class="ng-binding ng-scope">$</option><!-- end ngRepeat: r in currencylist  -->
+                                </select>
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="bi bi-caret-down-fill"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6"><br>
+                            <label><strong>Fair Usages Policy</strong></label><br>
+                            <div class="input-radio-btn-main-wrapper row">
+                                <div class="wrapper col">
+                                    <input type="radio" name="fair-usage" id="yes" value="Yes" checked="checked">
+                                    <label>Yes</label>
+                                </div>
+                                <div class="wrapper col">
+                                    <input type="radio" name="fair-usage" id="no" value="No">
+                                    <label>No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6"><br>
+                            <label><strong>Recharge</strong></label>
+                            <div class="input-radio-btn-main-wrapper row">
+                                <div class="wrapper col">
+                                    <input type="radio" name="rechargable" id="rbtnrec" value="1" checked="checked">
+                                    <label>Rechargable</label>
+                                </div>
+                                <div class="wrapper col">
+                                    <input type="radio" name="rechargable" id="Radio1" value="2">
+                                    <label>Non Rechargable</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-2" id="region-field-roaming" style="display: none;">
+                            <label><strong>Region</strong></label>
+                            <select class="form-control ng-pristine ng-untouched ng-valid ng-empty" name="region" ng-model="region">
+                                <option value="" selected="selected">--Select--</option>
+                                <!-- ngRepeat: option in Regionlist --><option ng-repeat="option in Regionlist" value="1" class="ng-binding ng-scope">Africa</option><!-- end ngRepeat: option in Regionlist --><option ng-repeat="option in Regionlist" value="8" class="ng-binding ng-scope">Global</option><!-- end ngRepeat: option in Regionlist --><option ng-repeat="option in Regionlist" value="2" class="ng-binding ng-scope">Arab-States</option><!-- end ngRepeat: option in Regionlist --><option ng-repeat="option in Regionlist" value="3" class="ng-binding ng-scope">Asia-Pacific</option><!-- end ngRepeat: option in Regionlist --><option ng-repeat="option in Regionlist" value="4" class="ng-binding ng-scope">Europe</option><!-- end ngRepeat: option in Regionlist --><option ng-repeat="option in Regionlist" value="5" class="ng-binding ng-scope">Middle-east</option><!-- end ngRepeat: option in Regionlist --><option ng-repeat="option in Regionlist" value="6" class="ng-binding ng-scope">North-America</option><!-- end ngRepeat: option in Regionlist --><option ng-repeat="option in Regionlist" value="7" class="ng-binding ng-scope">South-Latin-America</option><!-- end ngRepeat: option in Regionlist --><option ng-repeat="option in Regionlist" value="11" class="ng-binding ng-scope">All</option><!-- end ngRepeat: option in Regionlist -->
+                            </select>
+                        </div>
+                        <div class="col-md-6 mt-2" id="country-field-local"><br><br>
+                            <label><strong>Country</strong></label>
+                            <div class="input-group">
+                            <select class="form-control ng-pristine ng-untouched ng-valid ng-empty" name="country" ng-model="country">
+                                <option value="" selected="selected">--Select--</option>
+                                <!-- ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="1" class="ng-binding ng-scope">China</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="2" class="ng-binding ng-scope">Macau</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="3" class="ng-binding ng-scope">Taiwan</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="4" class="ng-binding ng-scope">Japan</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="5" class="ng-binding ng-scope">South Korea</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="6" class="ng-binding ng-scope">Australia</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="7" class="ng-binding ng-scope">New Zealand</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="8" class="ng-binding ng-scope">UAE</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="9" class="ng-binding ng-scope">Turkey</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="10" class="ng-binding ng-scope">Russia</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="11" class="ng-binding ng-scope">France</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="12" class="ng-binding ng-scope">USA</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="13" class="ng-binding ng-scope">Canada</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="14" class="ng-binding ng-scope">Qatar</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="15" class="ng-binding ng-scope">Guam</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="16" class="ng-binding ng-scope">Indonesia</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="17" class="ng-binding ng-scope">Malaysia</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="18" class="ng-binding ng-scope">Philippines</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="19" class="ng-binding ng-scope">Vietnam</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="20" class="ng-binding ng-scope">Cambodia</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="21" class="ng-binding ng-scope">Laos</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="22" class="ng-binding ng-scope">Myanmar</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="23" class="ng-binding ng-scope">India</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="24" class="ng-binding ng-scope">Bangladesh</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="25" class="ng-binding ng-scope">Pakistan</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="26" class="ng-binding ng-scope">Kazakhstan</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="27" class="ng-binding ng-scope">Singapore</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="28" class="ng-binding ng-scope">UK</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="29" class="ng-binding ng-scope">Srilanka</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="30" class="ng-binding ng-scope">Belgium</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="31" class="ng-binding ng-scope">Hong Kong</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="32" class="ng-binding ng-scope">Afghanisthan</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="33" class="ng-binding ng-scope">Albania</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="34" class="ng-binding ng-scope">Zambia</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="35" class="ng-binding ng-scope">Algeria</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="36" class="ng-binding ng-scope">Anguilla</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="37" class="ng-binding ng-scope">Antigua and Barbuda</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="39" class="ng-binding ng-scope">Argentina</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="40" class="ng-binding ng-scope">Armenia</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="41" class="ng-binding ng-scope">Aruba</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="42" class="ng-binding ng-scope">Austria</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="43" class="ng-binding ng-scope">Azerbaijan</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="44" class="ng-binding ng-scope">Bahamas</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="45" class="ng-binding ng-scope">Bahrain</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="46" class="ng-binding ng-scope">Barbados</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="47" class="ng-binding ng-scope">Belarus</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="48" class="ng-binding ng-scope">Belize</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="49" class="ng-binding ng-scope">Bermuda</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="50" class="ng-binding ng-scope">Bolivia</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="51" class="ng-binding ng-scope">Bonaire</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="52" class="ng-binding ng-scope">Bosnia and Herzegovina</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="53" class="ng-binding ng-scope">Brunei</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="54" class="ng-binding ng-scope">Bulgaria</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="55" class="ng-binding ng-scope">Cameron</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="56" class="ng-binding ng-scope">Cape Verde</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="57" class="ng-binding ng-scope">Cayman Islands</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="58" class="ng-binding ng-scope">Chad</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="59" class="ng-binding ng-scope">Chile</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="60" class="ng-binding ng-scope">Colombia</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="61" class="ng-binding ng-scope">Costa Rica</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="62" class="ng-binding ng-scope">Cote d ivoire</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="63" class="ng-binding ng-scope">Croatia</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="64" class="ng-binding ng-scope">Curacao</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="65" class="ng-binding ng-scope">Cyprus</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="66" class="ng-binding ng-scope">Czech Republic</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="67" class="ng-binding ng-scope">Denmark</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="68" class="ng-binding ng-scope">Dominicia</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="69" class="ng-binding ng-scope">Domnican Republic</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="70" class="ng-binding ng-scope">Ecuador</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="71" class="ng-binding ng-scope">Egypt</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="72" class="ng-binding ng-scope">El Salvador</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="73" class="ng-binding ng-scope">Estonia</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="74" class="ng-binding ng-scope">Faroe Islands</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="75" class="ng-binding ng-scope">Fiji</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="76" class="ng-binding ng-scope">Finland</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="77" class="ng-binding ng-scope">French Guiana</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="78" class="ng-binding ng-scope">Gabon</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="79" class="ng-binding ng-scope">Gambia</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="80" class="ng-binding ng-scope">Georgia</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="81" class="ng-binding ng-scope">Germany</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="82" class="ng-binding ng-scope">Ghana</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="83" class="ng-binding ng-scope">Gibraltor</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="84" class="ng-binding ng-scope">Greece</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="85" class="ng-binding ng-scope">Greenland</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="86" class="ng-binding ng-scope">Grenada</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="87" class="ng-binding ng-scope">Guadeloupe</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="88" class="ng-binding ng-scope">Guatemala</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="89" class="ng-binding ng-scope">Guinea</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="90" class="ng-binding ng-scope">Guinea - Bissau</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="91" class="ng-binding ng-scope">Guyana</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="92" class="ng-binding ng-scope">Haiti</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="93" class="ng-binding ng-scope">Honduras</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="94" class="ng-binding ng-scope">Hungary</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="95" class="ng-binding ng-scope">Iceland</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="96" class="ng-binding ng-scope">Iran</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="97" class="ng-binding ng-scope">Iraq</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="98" class="ng-binding ng-scope">Ireland</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="99" class="ng-binding ng-scope">Isle of Man</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="100" class="ng-binding ng-scope">Israel</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="101" class="ng-binding ng-scope">Italy</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="102" class="ng-binding ng-scope">Jamaica</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="103" class="ng-binding ng-scope">Jordan</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="105" class="ng-binding ng-scope">Kenya</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="106" class="ng-binding ng-scope">Kosovo</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="107" class="ng-binding ng-scope">Kuwait</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="108" class="ng-binding ng-scope">Kyrzizsthan</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="109" class="ng-binding ng-scope">Latvia</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="110" class="ng-binding ng-scope">Liberia</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="111" class="ng-binding ng-scope">Liechtenstein</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="113" class="ng-binding ng-scope">Macedonia</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="114" class="ng-binding ng-scope">Madagascar</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="115" class="ng-binding ng-scope">Malawi</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="116" class="ng-binding ng-scope">Maldives</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="117" class="ng-binding ng-scope">Malta</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="118" class="ng-binding ng-scope">Mali</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="119" class="ng-binding ng-scope">Martinique</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="120" class="ng-binding ng-scope">Mauritania</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="121" class="ng-binding ng-scope">Mauritius</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="122" class="ng-binding ng-scope">Mexico</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="123" class="ng-binding ng-scope">Moldova</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="124" class="ng-binding ng-scope">Mongolia</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="125" class="ng-binding ng-scope">Montserrat</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="126" class="ng-binding ng-scope">Monaco</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="127" class="ng-binding ng-scope">Mozambique</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="128" class="ng-binding ng-scope">Nauru</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="129" class="ng-binding ng-scope">Nepal</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="130" class="ng-binding ng-scope">Netherlands</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="131" class="ng-binding ng-scope">Nicaragua</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="132" class="ng-binding ng-scope">Niger</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="133" class="ng-binding ng-scope">Nigeria</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="134" class="ng-binding ng-scope">Norway</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="135" class="ng-binding ng-scope">Oman</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="136" class="ng-binding ng-scope">Palestine</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="137" class="ng-binding ng-scope">Panama</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="138" class="ng-binding ng-scope">Papua new Guinea</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="139" class="ng-binding ng-scope">Paraguay</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="140" class="ng-binding ng-scope">Peru</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="141" class="ng-binding ng-scope">Poland</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="142" class="ng-binding ng-scope">Portugal</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="143" class="ng-binding ng-scope">Puerto Rico</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="145" class="ng-binding ng-scope">Reunion</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="146" class="ng-binding ng-scope">Romania</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="147" class="ng-binding ng-scope">Rwanda</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="148" class="ng-binding ng-scope">Saint Bartholomew</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="149" class="ng-binding ng-scope">Saint Kitts and nevis</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="150" class="ng-binding ng-scope">Saint Lucia</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="151" class="ng-binding ng-scope">Saint Martin</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="152" class="ng-binding ng-scope">Saint Vincent and  the Grenadines</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="153" class="ng-binding ng-scope">Samoa</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="154" class="ng-binding ng-scope">Saudi Arabia</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="155" class="ng-binding ng-scope">Senegal</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="156" class="ng-binding ng-scope">Serbia</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="157" class="ng-binding ng-scope">Seychelles</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="158" class="ng-binding ng-scope">Sierra Leone</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="159" class="ng-binding ng-scope">Slovakia</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="160" class="ng-binding ng-scope">Slovenia</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="161" class="ng-binding ng-scope">South Africa</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="162" class="ng-binding ng-scope">Spain</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="163" class="ng-binding ng-scope">Sudan</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="164" class="ng-binding ng-scope">Suriname</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="166" class="ng-binding ng-scope">Sweden</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="167" class="ng-binding ng-scope">Switzerland</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="168" class="ng-binding ng-scope">Tajikistan</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="169" class="ng-binding ng-scope">Tanzania</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="170" class="ng-binding ng-scope">Thailand</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="171" class="ng-binding ng-scope">Timor Leste</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="172" class="ng-binding ng-scope">Tonga</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="173" class="ng-binding ng-scope">Trinidad and Tobago</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="174" class="ng-binding ng-scope">Tunisia</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="175" class="ng-binding ng-scope">Turks and Caicos Islands</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="176" class="ng-binding ng-scope">Uganda</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="177" class="ng-binding ng-scope">Ukraine</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="178" class="ng-binding ng-scope">Uruguay</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="179" class="ng-binding ng-scope">US. Virgin Islands</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="180" class="ng-binding ng-scope">Uzbekisthan</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="185" class="ng-binding ng-scope">Test Country Do Not Buy Sudipta</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="186" class="ng-binding ng-scope">Global</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="187" class="ng-binding ng-scope">Country</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="189" class="ng-binding ng-scope">KK</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="190" class="ng-binding ng-scope">Azores</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="191" class="ng-binding ng-scope">Aland Islands</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="192" class="ng-binding ng-scope">Brazil</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="193" class="ng-binding ng-scope">Congo</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="194" class="ng-binding ng-scope">Congo Republic</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="196" class="ng-binding ng-scope">Lithuania</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="197" class="ng-binding ng-scope">Luxembourg</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="198" class="ng-binding ng-scope">North Ireland</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="199" class="ng-binding ng-scope">Northern Cyprus</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="200" class="ng-binding ng-scope">San Marino</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="201" class="ng-binding ng-scope">Scotland</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="202" class="ng-binding ng-scope">Svalbard and Jan Mayen</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="203" class="ng-binding ng-scope">United Arab Emirates</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="204" class="ng-binding ng-scope">Vatican City</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="205" class="ng-binding ng-scope">Madeira</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="206" class="ng-binding ng-scope">Gotland</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="208" class="ng-binding ng-scope">Andorra</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="209" class="ng-binding ng-scope">Sardinia</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="210" class="ng-binding ng-scope">Balearic islands</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="211" class="ng-binding ng-scope">Canary islands</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="212" class="ng-binding ng-scope">Corfu</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="213" class="ng-binding ng-scope">Crete</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="214" class="ng-binding ng-scope">the Cyclades</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="215" class="ng-binding ng-scope">Guernsey</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="216" class="ng-binding ng-scope">Jersey</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="217" class="ng-binding ng-scope">Rhodes</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="218" class="ng-binding ng-scope">Sicily</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="219" class="ng-binding ng-scope">Tasmania</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="220" class="ng-binding ng-scope">Lesotho</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="223" class="ng-binding ng-scope">Channel Islands</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="225" class="ng-binding ng-scope">Tunisia</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="226" class="ng-binding ng-scope">Hawaii</option><!-- end ngRepeat: option in regionbycountrylist --><option ng-repeat="option in regionbycountrylist" value="227" class="ng-binding ng-scope">Africa</option><!-- end ngRepeat: option in regionbycountrylist -->
+                            </select>
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i class="bi bi-caret-down-fill"></i>
+                                </span>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col-md-6"><br><br>
+                            <label><strong>Data Allowance</strong></label>
+                            <div class="input-group">
+                            <!-- <div class="inline-text-select-form"> -->
+                                <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" name="dataallowance" placeholder="Enter" id="txtdataallowance" ng-model="dataallowance">
+                                 &nbsp; &nbsp; <!-- Add some space between the two dropdown menus -->
+                                <select class="form-control max-w-100 ng-pristine ng-untouched ng-valid ng-empty" ng-model="dataallowanceMBGB" id="txtdataallowancetype"> &nbsp; &nbsp; <!-- Add some space between the two dropdown menus -->
+                                    <option value="" selected="selected">--Select--</option><br>
+                                    <option value="MB">MB</option><br>
+                                    <option value="GB">GB</option><br>
+                                   
+                                </select> &nbsp; &nbsp; <!-- Add some space between the two dropdown menus -->
+
+                                <select class="form-control max-w-100 ng-pristine ng-untouched ng-valid ng-empty" ng-model="dataallowanceMonthly" id="txtdataallmonthly"><option value="? undefined:undefined ?" selected="selected"></option>
+                                    <option value="" selected="selected">--Select--</option>
+                                  <option value="0">NA</option>
+                                    <option value="/Month">Month</option>
+									 <option value="Unlimited">Unlimited </option>
+                                </select>
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="bi bi-caret-down-fill"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- </div> -->
+                        </div>
+
+                        <div class="col-md-6 upload-file-style-1 full-width" style="display:none;">
+                            <input class="form-control ng-pristine ng-untouched ng-valid ng-empty" id="Hidden1" ng-model="hidenuploadimages" type="hidden" autocomplete="off">
+                            <label><strong>Plan Logo</strong></label><br>
+                            <div class="upload-file-style-1">
+                                <input type="file" name="file-upload" id="file" class="inputfile ng-pristine ng-untouched ng-valid ng-empty" ng-model="uploadimage">
+
+                                <label for="file" class="ng-binding">
+                                    <i class="lni lni-cloud-upload"></i>
+                                    <span>Upload file:  </span>
+                                    
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6" style="display:none;"></div>
+                        
+
+                        <div class="col-md-6"><br>
+                            <label><strong>Remarks</strong></label>
+                            <textarea class="form-control remarks ng-pristine ng-untouched ng-valid ng-empty" name="remarks" placeholder="Write here..." ng-model="remarks"></textarea>
+                        </div>
+                        <div class="col-md-6" id="dvaddOperator" style="display:none">
+                            <label>Map Operator</label>
+                            <table width="100%">
+                                <tbody><tr>
+                                    <td>
+                                        <select class="form-control ng-pristine ng-untouched ng-valid ng-empty" name="country" ng-model="Operator">
+                                            <option value="" selected="selected">--Select--</option>
+                                            <!-- ngRepeat: option in Operatorlist -->
+                                        </select>
+
+                                    </td>
+                                    <td>
+                                        <button type="submit" class="btn btn-submit" ng-click="Mapoperator()">Add</button>
+
+                                    </td>
+                                </tr>
+                                <!-- ngRepeat: e in operator_list -->
+                            </tbody></table>
+
+                        </div>
+                        <div class="col-md-6" id="dvaddcounry" style="display:none">
+                            <label>Map Country</label>
+                            <table width="100%">
+                                <tbody><tr>
+                                    <td>
+                                        <select class="form-control ng-pristine ng-untouched ng-valid ng-empty" name="country" ng-model="country">
+                                            <option value="" selected="selected">--Select--</option>
+                                            <!-- ngRepeat: option in countrylist -->
+                                        </select>
+
+                                    </td>
+                                    <td>
+                                        <button type="submit" class="btn btn-submit" ng-click="AddCountry()">Add</button>
+
+                                    </td>
+                                </tr>
+                                <!-- ngRepeat: e in RegionCountry_list -->
+                            </tbody></table>
+
+                        </div>
+
+                        <div class="col-md-6">
+                            <script>
+                                CKEDITOR.replace('editor1');
+                            </script>
+                        </div></div>
+                    <br><div class="row mb-3">
+                            <!-- <label class="col-sm-2 col-form-label"><strong>Submit Plan</strong></label> -->
+                            <div class="col-sm-1"> <button type="submit" class="btn btn-primary">Save</button></div>
+                            <div class="col-sm-1"> <button type="reset" class="btn btn-secondary">Reset</button></div>
+                            <div class="col-sm-1"> <button type="update" class="btn btn-danger">Update</button></div>
+                         </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+       </div></div></div></div></div></section></main>

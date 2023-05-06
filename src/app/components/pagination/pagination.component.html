@@ -1,0 +1,249 @@
+<div ng-view="" class="ng-scope"><!--<!DOCTYPE html>
+   <!DOCTYPE html>
+   <html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+       <title></title>
+   
+   </head>
+   <body>-->
+   <!-- END X-NAVIGATION VERTICAL -->
+   <!-- END X-NAVIGATION VERTICAL -->
+   <!--<div class="page-content">
+   
+   
+   <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+       <li >
+   
+       </li>
+       <li class="xn-icon-button pull-right">
+           <a ng-click="logout()" class="mb-control"><span class="fa fa-sign-out"></span></a>
+       </li>
+   </ul>-->
+   <!-- END BREADCRUMB -->
+   <!-- PAGE CONTENT WRAPPER -->
+   <script type="text/javascript" class="ng-scope">
+       $(document).ready(function () {
+           $("#myInput").on("keyup", function () {
+               var value = $(this).val().toLowerCase();
+               debugger;
+               $("#datatable tr").filter(function () {
+                   $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+               });
+           });
+       });
+   </script>
+   <main class="ng-scope">
+       <div class="container-fluid" style="padding:50px">
+           <div class="page-content-wrap">
+   
+               <div class="row">
+                   <div class="col-md-12">
+   
+                       <form class="form-horizontal ng-valid ng-valid-maxlength ng-dirty ng-valid-parse">
+                           <div class="panel panel-default">
+                               <div class="panel-heading">
+                                   <h3 class="panel-title"><strong>Create Country</strong> Form</h3>
+                                   <!--  <ul class="panel-controls">
+                                       <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
+                                   </ul>-->
+                               </div>
+   
+                               <div class="panel-body" style="clear:both;margin-bottom:20px;">
+   
+                                   <div class="row">
+   
+                                       <div class="col-md-4">
+   
+                                           <div class="form-group">
+                                               <label class="col-md-12 control-label">Region</label>
+                                               <div class="col-md-12">
+                                                   <div class="input-group">
+                                                       <!--<span class="input-group-addon"><span class="fa fa-pencil"></span></span>-->
+                                                       <select class="form-control ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched" ng-model="ddlreason" name="ddlreason" id="txtreason">
+                                                           <!--ng-change="BindcountrybyRegion();"-->
+                                                           <option value="" selected="selected">--Select --</option>
+                                                           <!-- ngRepeat: option in Regionlist --><option ng-repeat="option in Regionlist" value="1" class="ng-binding ng-scope">Africa</option><!-- end ngRepeat: option in Regionlist --><option ng-repeat="option in Regionlist" value="8" class="ng-binding ng-scope">Global</option><!-- end ngRepeat: option in Regionlist --><option ng-repeat="option in Regionlist" value="2" class="ng-binding ng-scope">Arab-States</option><!-- end ngRepeat: option in Regionlist --><option ng-repeat="option in Regionlist" value="3" class="ng-binding ng-scope">Asia-Pacific</option><!-- end ngRepeat: option in Regionlist --><option ng-repeat="option in Regionlist" value="4" class="ng-binding ng-scope">Europe</option><!-- end ngRepeat: option in Regionlist --><option ng-repeat="option in Regionlist" value="5" class="ng-binding ng-scope">Middle-east</option><!-- end ngRepeat: option in Regionlist --><option ng-repeat="option in Regionlist" value="6" class="ng-binding ng-scope">North-America</option><!-- end ngRepeat: option in Regionlist --><option ng-repeat="option in Regionlist" value="7" class="ng-binding ng-scope">South-Latin-America</option><!-- end ngRepeat: option in Regionlist --><option ng-repeat="option in Regionlist" value="11" class="ng-binding ng-scope">All</option><!-- end ngRepeat: option in Regionlist -->
+                                                       </select>
+                                                   </div>
+                                               </div>
+                                           </div>
+   
+                                       </div>
+   
+                                       <div class="col-md-4">
+                                           <div class="form-group">
+                                               <label class="col-md-12 control-label">Country Name</label>
+                                               <div class="col-md-12">
+                                                   <div class="input-group">
+                                                       <input class="form-control ng-pristine ng-untouched ng-valid ng-empty" id="countryid" ng-model="countryId" type="hidden" autocomplete="off">
+                                                       <input class="form-control ng-pristine ng-untouched ng-valid ng-empty" id="txtcountryname" ng-model="countryname" type="text" autocomplete="off" placeholder="Enter Country Name">
+                                                   </div>
+                                               </div>
+                                           </div>
+                                       </div>
+   
+   
+                                       <div class="col-md-4">
+                                           <div class="form-group">
+                                               <label class="col-md-12 control-label">Code</label>
+                                               <div class="col-md-12">
+                                                   <div class="input-group">
+                                                       <input maxlength="2" style="text-transform:uppercase;" class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" id="txtcountrycode" ng-model="countryTwoLetter" type="text" autocomplete="off" placeholder="Enter Country Code">
+                                                   </div>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+   
+                                   <div class="row" style="display:none;">
+                                       <div class="col-md-12">
+                                           <div class="col-md-3">
+                                               Choose Logo:
+                                           </div>
+                                           <div class="col-md-9">
+                                               <!--<span class="file-button btn-primary"></span>-->
+                                               <input type="file" class="custom-file" name="avatar" id="image">
+                                               <!--<input type="text" id="Text2" ng-model="uploadimage" placeholder="no file selected" readonly="" />-->
+                                           </div>
+                                       </div>
+   
+                                   </div>
+   
+                                   <div class="row">
+                                       <div class="col-md-6">
+                                           <div class="form-group">
+                                               <button id="submit" class="btn btn-primary pull-right" ng-click="SaveCountry()">Save</button>
+                                               <button type="submit" id="update" style="display:none" class="btn btn-primary pull-right" ng-click="update_data();">Update</button>
+                                           </div>
+                                       </div>
+                                       <div class="col-md-6">
+                                           <div class="form-group">
+                                           </div>
+                                       </div>
+                                   </div>
+   
+                               </div>
+                           </div>
+                       </form>
+                       <div class="dispute">
+                           <div class="row">
+                               <!--<div class="col" style="margin:10px">
+                                   <input class="form-control" id="myInput" type="text" placeholder="Search.." style="max-width:500px">
+                               </div>-->
+                               <div class="col-sm-12 col-md-12 col-lg-12">
+                                   <div id="datatable_wrapper" class="dataTables_wrapper no-footer"><div class="dataTables_length" id="datatable_length"><label>Show <select name="datatable_length" aria-controls="datatable" class=""><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div><div id="datatable_filter" class="dataTables_filter"><label>Search:<input type="search" class="" placeholder="" aria-controls="datatable"></label></div><table id="datatable" class="table datatable-style-1 ng-isolate-scope no-footer dataTable" datatable="ng" dt-options="vm.dtOptions" role="grid" aria-describedby="datatable_info">
+                                       <thead class="ng-scope">
+                                           <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="ID: activate to sort column descending" aria-sort="ascending" style="width: 11.225px;">ID</th><th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Region: activate to sort column ascending" style="width: 104.975px;">Region</th><th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Country Name: activate to sort column ascending" style="width: 174.163px;">Country Name</th><th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Country Code: activate to sort column ascending" style="width: 88.0875px;">Country Code</th><th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Image Name: activate to sort column ascending" style="width: 401.125px;">Image Name</th><th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Edit: activate to sort column ascending" style="width: 132.625px;">Edit</th></tr>
+                                       </thead>
+                                       <tbody class="ng-scope">
+                                           <!-- ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist --><!-- end ngRepeat: e in countrylist -->
+                                       <tr ng-repeat="e in countrylist" class="ng-scope odd" role="row">
+                                               <td class="ng-binding sorting_1">1</td>
+                                               <td class="ng-binding">Asia-Pacific</td>
+                                               <td class="ng-binding">China</td>
+                                               <td class="ng-binding">CN</td>
+                                               <td class="ng-binding">/assets/images/countrybanner/China.png</td>
+   
+                                               <td style="width:15%"><a class="apply-btn" ng-click="View(e);"> Edit</a></td>
+   
+                                           </tr><tr ng-repeat="e in countrylist" class="ng-scope even" role="row">
+                                               <td class="ng-binding sorting_1">2</td>
+                                               <td class="ng-binding">Asia-Pacific</td>
+                                               <td class="ng-binding">Macau</td>
+                                               <td class="ng-binding">MO</td>
+                                               <td class="ng-binding">/assets/images/countrybanner/Macau.png</td>
+   
+                                               <td style="width:15%"><a class="apply-btn" ng-click="View(e);"> Edit</a></td>
+   
+                                           </tr><tr ng-repeat="e in countrylist" class="ng-scope odd" role="row">
+                                               <td class="ng-binding sorting_1">3</td>
+                                               <td class="ng-binding">Asia-Pacific</td>
+                                               <td class="ng-binding">Taiwan</td>
+                                               <td class="ng-binding">TW</td>
+                                               <td class="ng-binding">/assets/images/countrybanner/Taiwan.png</td>
+   
+                                               <td style="width:15%"><a class="apply-btn" ng-click="View(e);"> Edit</a></td>
+   
+                                           </tr><tr ng-repeat="e in countrylist" class="ng-scope even" role="row">
+                                               <td class="ng-binding sorting_1">4</td>
+                                               <td class="ng-binding">Asia-Pacific</td>
+                                               <td class="ng-binding">Japan</td>
+                                               <td class="ng-binding">JP</td>
+                                               <td class="ng-binding">/assets/images/countrybanner/Japan.png</td>
+   
+                                               <td style="width:15%"><a class="apply-btn" ng-click="View(e);"> Edit</a></td>
+   
+                                           </tr><tr ng-repeat="e in countrylist" class="ng-scope odd" role="row">
+                                               <td class="ng-binding sorting_1">5</td>
+                                               <td class="ng-binding">Asia-Pacific</td>
+                                               <td class="ng-binding">South Korea</td>
+                                               <td class="ng-binding">KR</td>
+                                               <td class="ng-binding">/assets/images/countrybanner/South Korea.png</td>
+   
+                                               <td style="width:15%"><a class="apply-btn" ng-click="View(e);"> Edit</a></td>
+   
+                                           </tr><tr ng-repeat="e in countrylist" class="ng-scope even" role="row">
+                                               <td class="ng-binding sorting_1">6</td>
+                                               <td class="ng-binding"></td>
+                                               <td class="ng-binding">Australia</td>
+                                               <td class="ng-binding">AU</td>
+                                               <td class="ng-binding">/assets/images/countrybanner/Australia.png</td>
+   
+                                               <td style="width:15%"><a class="apply-btn" ng-click="View(e);"> Edit</a></td>
+   
+                                           </tr><tr ng-repeat="e in countrylist" class="ng-scope odd" role="row">
+                                               <td class="ng-binding sorting_1">7</td>
+                                               <td class="ng-binding"></td>
+                                               <td class="ng-binding">New Zealand</td>
+                                               <td class="ng-binding">NZ</td>
+                                               <td class="ng-binding">/assets/images/countrybanner/NEW Zealand.png</td>
+   
+                                               <td style="width:15%"><a class="apply-btn" ng-click="View(e);"> Edit</a></td>
+   
+                                           </tr><tr ng-repeat="e in countrylist" class="ng-scope even" role="row">
+                                               <td class="ng-binding sorting_1">8</td>
+                                               <td class="ng-binding"></td>
+                                               <td class="ng-binding">UAE</td>
+                                               <td class="ng-binding">AE</td>
+                                               <td class="ng-binding">/assets/images/countrybanner/UAE.png</td>
+   
+                                               <td style="width:15%"><a class="apply-btn" ng-click="View(e);"> Edit</a></td>
+   
+                                           </tr><tr ng-repeat="e in countrylist" class="ng-scope odd" role="row">
+                                               <td class="ng-binding sorting_1">9</td>
+                                               <td class="ng-binding">Middle-east</td>
+                                               <td class="ng-binding">Turkey</td>
+                                               <td class="ng-binding">TR</td>
+                                               <td class="ng-binding">/assets/images/countrybanner/Turkey.png</td>
+   
+                                               <td style="width:15%"><a class="apply-btn" ng-click="View(e);"> Edit</a></td>
+   
+                                           </tr><tr ng-repeat="e in countrylist" class="ng-scope even" role="row">
+                                               <td class="ng-binding sorting_1">10</td>
+                                               <td class="ng-binding"></td>
+                                               <td class="ng-binding">Russia</td>
+                                               <td class="ng-binding">RU</td>
+                                               <td class="ng-binding">/assets/images/countrybanner/Russia.png</td>
+   
+                                               <td style="width:15%"><a class="apply-btn" ng-click="View(e);"> Edit</a></td>
+   
+                                           </tr></tbody>
+   
+                                   </table><div class="dataTables_info" id="datatable_info" role="status" aria-live="polite">Showing 1 to 10 of 213 entries</div><div class="dataTables_paginate paging_simple_numbers" id="datatable_paginate"><a class="paginate_button previous disabled" aria-controls="datatable" data-dt-idx="0" tabindex="-1" id="datatable_previous">Previous</a><span><a class="paginate_button current" aria-controls="datatable" data-dt-idx="1" tabindex="0">1</a><a class="paginate_button " aria-controls="datatable" data-dt-idx="2" tabindex="0">2</a><a class="paginate_button " aria-controls="datatable" data-dt-idx="3" tabindex="0">3</a><a class="paginate_button " aria-controls="datatable" data-dt-idx="4" tabindex="0">4</a><a class="paginate_button " aria-controls="datatable" data-dt-idx="5" tabindex="0">5</a><span class="ellipsis">…</span><a class="paginate_button " aria-controls="datatable" data-dt-idx="6" tabindex="0">22</a></span><a class="paginate_button next" aria-controls="datatable" data-dt-idx="7" tabindex="0" id="datatable_next">Next</a></div></div><h3 class="dt-loading" style="display: none;">Loading...</h3>
+   
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+   
+           </div>
+   
+       </div>
+   </main>
+   <!-- END PAGE CONTENT WRAPPER -->
+   <!--</div>
+   
+   </body>
+   </html>-->
+   </div>

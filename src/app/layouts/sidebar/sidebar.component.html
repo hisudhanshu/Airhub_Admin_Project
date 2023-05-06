@@ -1,0 +1,76 @@
+<aside id="sidebar" class="sidebar">
+    <ul class="sidebar-nav" id="sidebar-nav">
+      <li class="nav-item"> <a class="nav-link collapsed" routerLink="/dashboard"> <i class="bi bi-grid"></i> <span><strong>Dashboard</strong></span> <i class="bi bi-chevron-compact-right ms-auto"></i></a></li>
+       <li class="nav-item">
+          <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#"> <i class="bi bi-globe2"></i><span><strong>Country</strong></span><i class="bi bi-chevron-compact-right ms-auto"></i> </a>
+          <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+             <li> <a routerLink="/createcountryform"> <i class="bi bi-circle"></i><span>Create Counrty Form</span> </a></li>
+              <li> <a routerLink="/viewcountryform"> <i class="bi bi-circle"></i><span>View Counrty Form</span> </a></li>
+          </ul>
+       </li>
+       <ul class="sidebar-nav" id="sidebar-nav">
+            <li class="nav-item"> <a class="nav-link collapsed" routerLink="/data"> <i class="bi bi-dash-circle"></i> <span><strong>Data Sync</strong></span> <i class="bi bi-chevron-compact-right ms-auto"></i></a></li>
+            <li class="nav-item"> <a class="nav-link collapsed" routerLink="/kyc"> <i class="bi bi-grid"></i> <span><strong>KYC User</strong></span> <i class="bi bi-chevron-compact-right ms-auto"></i></a></li></ul>
+         <li class="nav-item">
+          <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#"> <i class="bi bi-tv"></i><span><strong>Plans</strong></span><i class="bi bi-chevron-compact-right ms-auto"></i> </a>
+          <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+             <li> <a routerLink="/createplan"> <i class="bi bi-circle"></i><span>Create Plans</span> </a></li>
+             <li> <a routerLink="/viewplan"> <i class="bi bi-circle"></i><span>View Plans</span> </a></li>
+             <li> <a routerLink="/topup"> <i class="bi bi-circle"></i><span>Rechargable Topup</span> </a></li>
+             <li> <a routerLink="planorderset"> <i class="bi bi-circle"></i><span>Plan Order Set</span> </a></li>
+             <!-- <li> <a routerLink="/pagination"> <i class="bi bi-circle"></i><span>Testing</span> </a></li> -->
+          </ul>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link collapsed" data-bs-target="#tables-nav1" data-bs-toggle="collapse" href="#"> <i class="bi bi-journal"></i><span><strong>Reports</strong></span><i class="bi bi-chevron-compact-right ms-auto"></i> </a>
+         <ul id="tables-nav1" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+            <li> <a routerLink="/check"> <i class="bi bi-circle"></i><span>Check out reports</span> </a></li>
+            <li> <a routerLink="/sale"> <i class="bi bi-circle"></i><span>Sale reports</span> </a></li>
+            <li> <a routerLink="/signupreports"> <i class="bi bi-circle"></i><span>Signup reports</span> </a></li>
+            <li> <a routerLink="/sub"> <i class="bi bi-circle"></i><span>Subscriptions reports</span> </a></li>
+            <li> <a routerLink="/web"> <i class="bi bi-circle"></i><span>Website reports</span> </a></li>
+            <li> <a routerLink="/h20"> <i class="bi bi-circle"></i><span>H20 reports</span> </a></li>
+         </ul>
+      </li>
+      <li class="nav-item">
+         <a class="nav-link collapsed" data-bs-target="#tables-nav2" data-bs-toggle="collapse" href="#"> <i class="bi bi-tv"></i><span><strong>Operator</strong></span><i class="bi bi-chevron-compact-right ms-auto"></i> </a>
+         <ul id="tables-nav2" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+            <li> <a routerLink="/createoperator"> <i class="bi bi-circle"></i><span>Create Operator</span> </a></li>
+            <li> <a routerLink="/view"> <i class="bi bi-circle"></i><span>View Operator</span> </a></li>
+         </ul>
+      </li>
+      <li class="nav-item">
+         <a class="nav-link collapsed" data-bs-target="#tables-nav4" data-bs-toggle="collapse" href="#"> <i class="bi bi-tv"></i><span><strong>Affiliate</strong></span><i class="bi bi-chevron-compact-right ms-auto"></i> </a>
+         <ul id="tables-nav4" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+            <li> <a routerLink="createaffiliate"> <i class="bi bi-circle"></i><span>Create Affiliate</span> </a></li>
+            <li> <a routerLink="/affiliate"> <i class="bi bi-circle"></i><span>View Affiliate</span> </a></li>
+         </ul>
+      </li>
+      <li class="nav-item">
+         <a class="nav-link collapsed" data-bs-target="#tables-nav3" data-bs-toggle="collapse" href="#"> <i class="bi bi-tv"></i><span><strong>Enquiry</strong></span><i class="bi bi-chevron-compact-right ms-auto"></i> </a>
+         <ul id="tables-nav3" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+            <li> <a routerLink="/us"> <i class="bi bi-circle"></i><span>view contact us</span> </a></li>
+            <li> <a routerLink="/partner"> <i class="bi bi-circle"></i><span>view Partner</span> </a></li>
+         </ul>
+      </li>
+      <li class="nav-item">
+         <a class="nav-link collapsed" data-bs-target="#tables-nav5" data-bs-toggle="collapse" href="#"> <i class="bi bi-headset"></i><span><strong>Service Management</strong></span><i class="bi bi-chevron-compact-right ms-auto"></i> </a>
+         <ul id="tables-nav5" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+            <li> <a routerLink="/tickets"> <i class="bi bi-circle"></i><span>Tickets</span> </a></li>
+            <li> <a routerLink="/complaint"> <i class="bi bi-circle"></i><span>Management Sub complaint</span> </a></li>
+         </ul>
+      </li>
+      <li class="nav-item"> <a class="nav-link collapsed" routerLink="/api"> <i class="bi bi-gear-wide-connected"></i> <span><strong>API order Management</strong></span> <i class="bi bi-chevron-compact-right ms-auto"></i></a></li>
+      <li class="nav-item"> <a class="nav-link collapsed" routerLink="/pages-register"> <i class="bi bi-dash-circle"></i> <span><strong>Manage Blog</strong><br>(External)</span> <i class="bi bi-chevron-compact-right ms-auto"></i></a></li>
+       <li class="nav-heading">Reach us</li>
+       <!--<li class="nav-item"> <a class="nav-link collapsed" routerLink="/user-profile"> <i class="bi bi-person"></i> <span>Profile</span> </a></li>
+       <li class="nav-item"> <a class="nav-link collapsed" routerLink="/pages-faq"> <i class="bi bi-question-circle"></i> <span>F.A.Q</span> </a></li>
+       <li class="nav-item"> <a class="nav-link collapsed" routerLink="/pages-contact"> <i class="bi bi-envelope"></i> <span>Contact</span> </a></li> -->
+       <li class="nav-item"> <a class="nav-link collapsed" routerLink="/pages-register"> <i class="bi bi-card-list"></i> <span>Register</span> </a></li>
+       <li class="nav-item"> <a class="nav-link collapsed" routerLink="/pages-login"> <i class="bi bi-box-arrow-in-right"></i> <span>Login</span> </a></li>
+       <li class="nav-item"> <a class="nav-link collapsed" routerLink="/user-profile"> <i class="bi bi-person-circle"></i> <span>Profile</span> </a></li>
+       <li class="nav-item"> <a class="nav-link collapsed" routerLink="/pages-error404"> <i class="bi bi-dash-circle"></i> <span>Error 404</span> </a></li>
+       <li class="nav-item"> <a class="nav-link collapsed" routerLink="/pages-blank"> <i class="bi bi-file-earmark"></i> <span>Blank</span> </a></li>
+    </ul>
+ </aside>
+

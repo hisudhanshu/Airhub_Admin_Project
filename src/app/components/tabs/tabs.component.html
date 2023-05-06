@@ -1,0 +1,238 @@
+<main id="main" class="main">
+    <div class="pagetitle">
+       <h1></h1>
+       <!-- <table>
+         <thead>
+           <tr>
+             <th (click)="sort('name')">Name↑↓</th>
+             <th (click)="sort('age')">Age↑↓</th>
+             <th (click)="sort('city')">City↑↓</th>
+           </tr>
+         </thead>
+         <tbody>
+           <tr *ngFor="let item of data | orderBy:sortKey:reverse">
+             <td>{{ item.name }}</td>
+             <td>{{ item.age }}</td>
+             <td>{{ item.city }}</td>
+           </tr>
+         </tbody>
+       </table>
+        -->
+
+        <section class="section">
+         <div class="container-fluid">
+            <div class="col-lg-12">
+               <div class="card">
+                  <div class="card-body">
+                     <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                        <div class="container-fluid">
+                          <a class="container-fluid"><strong><b><h1 class="card-title"><strong>Plan by Country</strong></h1></b></strong></a>
+                          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                              <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#"></a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#"></a>
+                              </li>
+                              </ul>
+                          </div>
+                        </div>
+                      </nav><br>
+
+        <div ng-view="" class="ng-scope">
+         <script type="text/javascript" class="ng-scope">
+             $(document).ready(function () {
+                 $("#myInput").on("keyup", function () {
+                     var value = $(this).val().toLowerCase();
+                     $("#datatable tbody tr").filter(function () {
+                         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                     });
+                 });
+             });
+             $('#ok_box').hide();
+             $('#confirm_btn').click(function () {
+                 $('#confirm_box').hide()
+                 //$('#ok_box').show();
+         
+             })
+             $('#cancel_btn').click(function () {
+                 $('#confirm_box, #ok_box').hide();
+         
+             })
+             $('#ok_btn').click(function () {
+                 $('#confirm_box, #ok_box').hide();
+             })
+             $(function () {
+                 $('#modal').modal('hide');
+             });
+         
+         </script>
+         <main class="ng-scope">
+         
+             <div class="container-fluid">
+                 <div class="row page-wrapper-topbar align-items-center">
+                     <div class="col">
+                         <ol class="breadcrumb ">
+                             <li class="breadcrumb-item"><strong>Plan By Country</strong></li>
+                         </ol>
+                     </div>
+         
+                     <div class="col-md-3">
+                         <label>Select country</label>
+                         <select class="form-control ng-pristine ng-untouched ng-valid ng-empty" ng-model="plancountrytype" id="plancountrytype" ng-change="planbycountrys()"><option value="? undefined:undefined ?" selected="selected"></option>
+                             <!-- ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="1" class="ng-binding ng-scope">China</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="2" class="ng-binding ng-scope">Macau</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="3" class="ng-binding ng-scope">Taiwan</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="4" class="ng-binding ng-scope">Japan</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="5" class="ng-binding ng-scope">South Korea</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="6" class="ng-binding ng-scope">Australia</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="7" class="ng-binding ng-scope">New Zealand</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="8" class="ng-binding ng-scope">UAE</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="9" class="ng-binding ng-scope">Turkey</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="10" class="ng-binding ng-scope">Russia</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="11" class="ng-binding ng-scope">France</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="12" class="ng-binding ng-scope">USA</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="13" class="ng-binding ng-scope">Canada</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="14" class="ng-binding ng-scope">Qatar</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="15" class="ng-binding ng-scope">Guam</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="16" class="ng-binding ng-scope">Indonesia</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="17" class="ng-binding ng-scope">Malaysia</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="18" class="ng-binding ng-scope">Philippines</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="19" class="ng-binding ng-scope">Vietnam</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="20" class="ng-binding ng-scope">Cambodia</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="21" class="ng-binding ng-scope">Laos</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="22" class="ng-binding ng-scope">Myanmar</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="23" class="ng-binding ng-scope">India</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="24" class="ng-binding ng-scope">Bangladesh</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="25" class="ng-binding ng-scope">Pakistan</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="26" class="ng-binding ng-scope">Kazakhstan</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="27" class="ng-binding ng-scope">Singapore</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="28" class="ng-binding ng-scope">UK</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="29" class="ng-binding ng-scope">Srilanka</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="30" class="ng-binding ng-scope">Belgium</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="31" class="ng-binding ng-scope">Hong Kong</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="32" class="ng-binding ng-scope">Afghanisthan</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="33" class="ng-binding ng-scope">Albania</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="34" class="ng-binding ng-scope">Zambia</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="35" class="ng-binding ng-scope">Algeria</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="36" class="ng-binding ng-scope">Anguilla</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="37" class="ng-binding ng-scope">Antigua and Barbuda</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="39" class="ng-binding ng-scope">Argentina</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="40" class="ng-binding ng-scope">Armenia</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="41" class="ng-binding ng-scope">Aruba</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="42" class="ng-binding ng-scope">Austria</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="43" class="ng-binding ng-scope">Azerbaijan</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="44" class="ng-binding ng-scope">Bahamas</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="45" class="ng-binding ng-scope">Bahrain</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="46" class="ng-binding ng-scope">Barbados</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="47" class="ng-binding ng-scope">Belarus</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="48" class="ng-binding ng-scope">Belize</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="49" class="ng-binding ng-scope">Bermuda</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="50" class="ng-binding ng-scope">Bolivia</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="51" class="ng-binding ng-scope">Bonaire</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="52" class="ng-binding ng-scope">Bosnia and Herzegovina</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="53" class="ng-binding ng-scope">Brunei</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="54" class="ng-binding ng-scope">Bulgaria</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="55" class="ng-binding ng-scope">Cameron</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="56" class="ng-binding ng-scope">Cape Verde</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="57" class="ng-binding ng-scope">Cayman Islands</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="58" class="ng-binding ng-scope">Chad</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="59" class="ng-binding ng-scope">Chile</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="60" class="ng-binding ng-scope">Colombia</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="61" class="ng-binding ng-scope">Costa Rica</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="62" class="ng-binding ng-scope">Cote d ivoire</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="63" class="ng-binding ng-scope">Croatia</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="64" class="ng-binding ng-scope">Curacao</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="65" class="ng-binding ng-scope">Cyprus</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="66" class="ng-binding ng-scope">Czech Republic</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="67" class="ng-binding ng-scope">Denmark</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="68" class="ng-binding ng-scope">Dominicia</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="69" class="ng-binding ng-scope">Domnican Republic</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="70" class="ng-binding ng-scope">Ecuador</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="71" class="ng-binding ng-scope">Egypt</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="72" class="ng-binding ng-scope">El Salvador</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="73" class="ng-binding ng-scope">Estonia</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="74" class="ng-binding ng-scope">Faroe Islands</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="75" class="ng-binding ng-scope">Fiji</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="76" class="ng-binding ng-scope">Finland</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="77" class="ng-binding ng-scope">French Guiana</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="78" class="ng-binding ng-scope">Gabon</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="79" class="ng-binding ng-scope">Gambia</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="80" class="ng-binding ng-scope">Georgia</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="81" class="ng-binding ng-scope">Germany</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="82" class="ng-binding ng-scope">Ghana</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="83" class="ng-binding ng-scope">Gibraltor</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="84" class="ng-binding ng-scope">Greece</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="85" class="ng-binding ng-scope">Greenland</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="86" class="ng-binding ng-scope">Grenada</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="87" class="ng-binding ng-scope">Guadeloupe</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="88" class="ng-binding ng-scope">Guatemala</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="89" class="ng-binding ng-scope">Guinea</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="90" class="ng-binding ng-scope">Guinea - Bissau</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="91" class="ng-binding ng-scope">Guyana</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="92" class="ng-binding ng-scope">Haiti</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="93" class="ng-binding ng-scope">Honduras</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="94" class="ng-binding ng-scope">Hungary</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="95" class="ng-binding ng-scope">Iceland</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="96" class="ng-binding ng-scope">Iran</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="97" class="ng-binding ng-scope">Iraq</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="98" class="ng-binding ng-scope">Ireland</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="99" class="ng-binding ng-scope">Isle of Man</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="100" class="ng-binding ng-scope">Israel</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="101" class="ng-binding ng-scope">Italy</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="102" class="ng-binding ng-scope">Jamaica</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="103" class="ng-binding ng-scope">Jordan</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="105" class="ng-binding ng-scope">Kenya</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="106" class="ng-binding ng-scope">Kosovo</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="107" class="ng-binding ng-scope">Kuwait</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="108" class="ng-binding ng-scope">Kyrzizsthan</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="109" class="ng-binding ng-scope">Latvia</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="110" class="ng-binding ng-scope">Liberia</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="111" class="ng-binding ng-scope">Liechtenstein</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="113" class="ng-binding ng-scope">Macedonia</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="114" class="ng-binding ng-scope">Madagascar</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="115" class="ng-binding ng-scope">Malawi</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="116" class="ng-binding ng-scope">Maldives</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="117" class="ng-binding ng-scope">Malta</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="118" class="ng-binding ng-scope">Mali</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="119" class="ng-binding ng-scope">Martinique</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="120" class="ng-binding ng-scope">Mauritania</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="121" class="ng-binding ng-scope">Mauritius</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="122" class="ng-binding ng-scope">Mexico</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="123" class="ng-binding ng-scope">Moldova</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="124" class="ng-binding ng-scope">Mongolia</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="125" class="ng-binding ng-scope">Montserrat</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="126" class="ng-binding ng-scope">Monaco</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="127" class="ng-binding ng-scope">Mozambique</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="128" class="ng-binding ng-scope">Nauru</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="129" class="ng-binding ng-scope">Nepal</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="130" class="ng-binding ng-scope">Netherlands</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="131" class="ng-binding ng-scope">Nicaragua</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="132" class="ng-binding ng-scope">Niger</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="133" class="ng-binding ng-scope">Nigeria</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="134" class="ng-binding ng-scope">Norway</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="135" class="ng-binding ng-scope">Oman</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="136" class="ng-binding ng-scope">Palestine</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="137" class="ng-binding ng-scope">Panama</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="138" class="ng-binding ng-scope">Papua new Guinea</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="139" class="ng-binding ng-scope">Paraguay</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="140" class="ng-binding ng-scope">Peru</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="141" class="ng-binding ng-scope">Poland</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="142" class="ng-binding ng-scope">Portugal</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="143" class="ng-binding ng-scope">Puerto Rico</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="145" class="ng-binding ng-scope">Reunion</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="146" class="ng-binding ng-scope">Romania</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="147" class="ng-binding ng-scope">Rwanda</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="148" class="ng-binding ng-scope">Saint Bartholomew</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="149" class="ng-binding ng-scope">Saint Kitts and nevis</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="150" class="ng-binding ng-scope">Saint Lucia</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="151" class="ng-binding ng-scope">Saint Martin</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="152" class="ng-binding ng-scope">Saint Vincent and  the Grenadines</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="153" class="ng-binding ng-scope">Samoa</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="154" class="ng-binding ng-scope">Saudi Arabia</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="155" class="ng-binding ng-scope">Senegal</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="156" class="ng-binding ng-scope">Serbia</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="157" class="ng-binding ng-scope">Seychelles</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="158" class="ng-binding ng-scope">Sierra Leone</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="159" class="ng-binding ng-scope">Slovakia</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="160" class="ng-binding ng-scope">Slovenia</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="161" class="ng-binding ng-scope">South Africa</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="162" class="ng-binding ng-scope">Spain</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="163" class="ng-binding ng-scope">Sudan</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="164" class="ng-binding ng-scope">Suriname</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="166" class="ng-binding ng-scope">Sweden</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="167" class="ng-binding ng-scope">Switzerland</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="168" class="ng-binding ng-scope">Tajikistan</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="169" class="ng-binding ng-scope">Tanzania</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="170" class="ng-binding ng-scope">Thailand</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="171" class="ng-binding ng-scope">Timor Leste</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="172" class="ng-binding ng-scope">Tonga</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="173" class="ng-binding ng-scope">Trinidad and Tobago</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="174" class="ng-binding ng-scope">Tunisia</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="175" class="ng-binding ng-scope">Turks and Caicos Islands</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="176" class="ng-binding ng-scope">Uganda</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="177" class="ng-binding ng-scope">Ukraine</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="178" class="ng-binding ng-scope">Uruguay</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="179" class="ng-binding ng-scope">US. Virgin Islands</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="180" class="ng-binding ng-scope">Uzbekisthan</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="181" class="ng-binding ng-scope">All</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="185" class="ng-binding ng-scope">Test Country Do Not Buy Sudipta</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="186" class="ng-binding ng-scope">Global</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="187" class="ng-binding ng-scope">Country</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="189" class="ng-binding ng-scope">KK</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="190" class="ng-binding ng-scope">Azores</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="191" class="ng-binding ng-scope">Aland Islands</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="192" class="ng-binding ng-scope">Brazil</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="193" class="ng-binding ng-scope">Congo</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="194" class="ng-binding ng-scope">Congo Republic</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="196" class="ng-binding ng-scope">Lithuania</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="197" class="ng-binding ng-scope">Luxembourg</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="198" class="ng-binding ng-scope">North Ireland</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="199" class="ng-binding ng-scope">Northern Cyprus</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="200" class="ng-binding ng-scope">San Marino</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="201" class="ng-binding ng-scope">Scotland</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="202" class="ng-binding ng-scope">Svalbard and Jan Mayen</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="203" class="ng-binding ng-scope">United Arab Emirates</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="204" class="ng-binding ng-scope">Vatican City</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="205" class="ng-binding ng-scope">Madeira</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="206" class="ng-binding ng-scope">Gotland</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="208" class="ng-binding ng-scope">Andorra</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="209" class="ng-binding ng-scope">Sardinia</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="210" class="ng-binding ng-scope">Balearic islands</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="211" class="ng-binding ng-scope">Canary islands</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="212" class="ng-binding ng-scope">Corfu</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="213" class="ng-binding ng-scope">Crete</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="214" class="ng-binding ng-scope">the Cyclades</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="215" class="ng-binding ng-scope">Guernsey</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="216" class="ng-binding ng-scope">Jersey</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="217" class="ng-binding ng-scope">Rhodes</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="218" class="ng-binding ng-scope">Sicily</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="219" class="ng-binding ng-scope">Tasmania</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="220" class="ng-binding ng-scope">Lesotho</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="223" class="ng-binding ng-scope">Channel Islands</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="225" class="ng-binding ng-scope">Tunisia</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="226" class="ng-binding ng-scope">Hawaii</option><!-- end ngRepeat: r in countrylist --><option ng-repeat="r in countrylist" value="227" class="ng-binding ng-scope">Africa</option><!-- end ngRepeat: r in countrylist -->
+                         </select>
+         
+                     </div>
+         
+                     <div class="col">
+                         <input type="button" class="btn btn-primary pull-right" onclick="tableToExcel('datatable', 'Download')" value="Export to Excel">
+                     </div>
+         
+         
+                     <div class="col">
+                         <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                     </div>
+         
+                 </div>
+                 <div class="row">
+                     <div class="col-xl-12">
+                         <table id="datatable" class="table datatable-style-1" style="width:100%">
+                             <thead>
+                                 <tr>
+                                     <th>Sr.no</th>
+                                     <th>PLAN NAME</th>
+                                     <th>TopSeller</th>
+                                     <th>BestSeller</th>
+                                     <th>Order </th>
+                                     <th>update order  </th>
+         
+                                 </tr>
+                             </thead>
+                             <tbody>
+                                 <!-- ngRepeat: e in Planbycountrylist -->
+         
+                             </tbody>
+                         </table>
+                     </div>
+                 </div>
+             </div>
+         
+             <!--<div class="modal fade" id="lpaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                 <div class="modal-dialog modal-dialog-centered">
+                     <div class="modal-content">
+                         <div class="modal-header ml-auto pb-0">
+                             <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"><i class="lni lni-close"></i></button>
+                         </div>
+                         <div class="modal-body pt-0">
+                             <div class="col-md-12">
+                                 <label>Remarks</label>
+                                 <textarea class="form-control" name="remarks" ng-model="remarks" placeholder="Please write your Remarks here.." disabled></textarea>
+                             </div>
+                         </div>
+         
+                     </div>
+                 </div>
+             </div>-->
+         </main>
+         
+         <!-- <div class="alert_box" id="confirm_box">
+                         <div class="alert_content">
+                                 <div class="alert_img"><img src="./assets/images/facial_img_1.png"></div>
+                                 <div class="alert_msg">
+                                     <h2>Are you sure you wish to perform this action?</h2>
+                                     <ul class="alert_btns">
+                                         <li><button class="btn_red" id="confirm_btn">CONFIRM</button></li>
+                                         <li><button class="btn_gray" id="cancel_btn">CANCEL</button></li>
+                                     </ul>
+                                 </div>
+                         </div>
+                     </div>-->
+         <div id="ok_box" class="modal ng-scope" style="display: none;">
+             <div class="alert_box">
+                 <div class="alert_content">
+                     <div class="alert_img"><img src="../../img/facial_img_2.png"></div>
+                     <div class="alert_msg">
+                         <h2>Action Performed Successfully!</h2>
+                         <ul class="alert_btns">
+                             <li><button id="cancel_btn" class="btn btn-outline mr-4" data-dismiss="modal">Ok</button></li>
+         
+                         </ul>
+                     </div>
+                 </div>
+             </div>
+         
+         </div>
+         <!--  </div>-->
+         <div id="confirm_box" class="modal ng-scope" style="display:none">
+             <div class="alert_box">
+                 <div class="alert_content">
+                     <div class="alert_img"><img src="../../img/facial_img_1.png"></div>
+                     <div class="alert_msg">
+                         <input class="form-control ng-pristine ng-untouched ng-valid ng-empty" id="planId" ng-model="planId" type="hidden" autocomplete="off">
+                         <input class="form-control ng-pristine ng-untouched ng-valid ng-empty" id="Hidden1" ng-model="planstatus" type="hidden" autocomplete="off">
+                         <h2>Are you sure you wish to perform this action?</h2>
+                         <ul class="alert_btns">
+                             <li><button class="btn_red" id="confirm_btn" ng-click="conform(e);">CONFIRM</button></li>
+                             <li><button class="btn_gray" id="cancel_btn" data-dismiss="modal">CANCEL</button></li>
+                         </ul>
+                     </div>
+                 </div>
+             </div>
+         </div>
+         <!-- orderby Modal -->
+         <div class="modal fade ng-scope" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+             <div class="modal-dialog modal-dialog-centered">
+                 <div class="modal-content">
+                     <div class="modal-header ml-auto pb-0">
+                         <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"><i class="lni lni-close"></i></button>
+                     </div>
+                     <div class="modal-body pt-0">
+                         <div class="col-md-12">
+                             <label>Order</label>
+                             <input class="form-control ng-pristine ng-untouched ng-valid ng-empty" ng-model="Pid" type="hidden" autocomplete="off">
+                             <input type="number" class="form-control ng-pristine ng-untouched ng-valid ng-empty" name="remark-date" placeholder="Enter" ng-model="ordrs">
+                         </div>
+                         <div class="col-md-12">
+                             <label>Best Seller</label>
+                             <select class="form-control ng-pristine ng-untouched ng-valid ng-empty" ng-model="Bestseller" id="txtbestseller">
+                                 <option value="" selected="selected">Select</option>
+                                 <option value="Yes">Yes</option>
+                                 <option value="No">No</option>
+         
+                             </select>
+         
+                         </div>
+                         <div class="col-md-12">
+                             <label>Top Seller</label>
+                             <select class="form-control ng-pristine ng-untouched ng-valid ng-empty" ng-model="TOPseller" id="txttopseller">
+                                 <option value="" selected="selected">Select</option>
+                                 <option value="Yes">Yes</option>
+                                 <option value="No">No</option>
+         
+                             </select>
+         
+                         </div>
+         
+         
+                         <div class="col-md-12">
+                             <label>Kyc status</label>
+                             <select class="form-control ng-pristine ng-untouched ng-valid ng-empty" ng-model="Kycs" id="txtkycs">
+                                 <option value="" selected="selected">Select</option>
+                                 <option value="1">Yes</option>
+                                 <option value="0">No</option>
+         
+                             </select>
+         
+                         </div>
+                     </div>
+                     <div class="modal-footer">
+                         <button type="button" class="btn btn-outline" data-dismiss="modal">Cancel</button>
+                         <button type="submit" class="btn btn-primary" ng-click="update_order()">Update</button>
+                     </div>
+                 </div>
+             </div>
+         </div>
+         <!-- // end remarks modal -->
+         </div></div></div></div></div></section>

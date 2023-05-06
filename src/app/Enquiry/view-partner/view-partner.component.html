@@ -1,0 +1,161 @@
+<main id="main" class="main">
+    <div class="pagetitle">
+    </div>
+    <section class="section">
+       <div class="container-fluid">
+          <div class="col-lg-12">
+             <div class="card">
+                <div class="card-body">
+                    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                        <div class="container-fluid">
+                          <a class="container-fluid"><strong><b><h1 class="card-title"><strong>Partner</strong></h1></b></strong></a>
+                          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                              <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#"></a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#"></a>
+                              </li>
+                              </ul>
+                          </div>
+                        </div>
+                      </nav><br>
+<div ng-view="" class="ng-scope">
+    <script type="text/javascript" class="ng-scope">
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#datatable tbody tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+        $('#ok_box').hide();
+        $('#confirm_btn').click(function () {
+            $('#confirm_box').hide()
+            //$('#ok_box').show();
+    
+        })
+        $('#cancel_btn').click(function () {
+            $('#confirm_box, #ok_box').hide();
+    
+        })
+        $('#ok_btn').click(function () {
+            $('#confirm_box, #ok_box').hide();
+        })
+        $(function () {
+            $('#modal').modal('hide');
+        });
+    
+    </script>
+    <main class="ng-scope">
+    
+        <div class="container-fluid">
+            <div class="row page-wrapper-topbar align-items-center">
+                <div class="col">
+                    <ol class="breadcrumb ">
+                        
+                    </ol>
+                </div>
+                <div class="col">
+                    <input type="button" class="btn btn-primary pull-right" onclick="tableToExcel('datatable', 'Download')" value="Export to Excel">
+                </div><br>
+                <div class="col">
+                    <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                </div>
+                <!--<a href="#!/add_operator" class="btn theme-btn" ng-click="clear()">Create Operator</a>-->
+            </div><br>
+            <div class="row">
+                <div class="col-xl-12">
+                    <table id="datatable" class="table datatable-style-1" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Sr.No</th>
+                                <th>Company Name</th>
+                                <th>Company Website</th>
+                                <th>Country</th>
+                                <th>Name of Contact</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Comments</th>
+                                <th>Created Date</th>
+                               
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- ngRepeat: e in partnerenqlist -->
+    
+                        </tbody>    
+                    </table>
+                </div>
+            </div>
+        </div>
+    
+        <div class="modal fade" id="lpaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display:none">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header ml-auto pb-0">
+                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"><i class="lni lni-close"></i></button>
+                    </div>
+                    <div class="modal-body pt-0">
+                        <div class="col-md-12">
+                            <label>Remarks</label>
+                            <textarea class="form-control ng-pristine ng-untouched ng-valid ng-empty" name="remarks" ng-model="remarks" placeholder="Please write your Remarks here.." disabled=""></textarea>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- <div class="alert_box" id="confirm_box">
+                    <div class="alert_content">
+                            <div class="alert_img"><img src="./assets/images/facial_img_1.png"></div>
+                            <div class="alert_msg">
+                                <h2>Are you sure you wish to perform this action?</h2>
+                                <ul class="alert_btns">
+                                    <li><button class="btn_red" id="confirm_btn">CONFIRM</button></li>
+                                    <li><button class="btn_gray" id="cancel_btn">CANCEL</button></li>
+                                </ul>
+                            </div>
+                    </div>
+                </div>-->
+    <div id="ok_box" class="modal ng-scope" style="display:none">
+        <div class="alert_box">
+            <div class="alert_content">
+                <div class="alert_img"><img src="../../img/facial_img_2.png"></div>
+                <div class="alert_msg">
+                    <h2>Action Performed Successfully!</h2>
+                    <ul class="alert_btns">
+                        <li><button id="cancel_btn" class="btn btn-outline mr-4" data-dismiss="modal">Ok</button></li>
+    
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    <!--  </div>-->
+    <div id="confirm_box" class="modal ng-scope" style="display:none">
+        <div class="alert_box">
+            <div class="alert_content">
+                <div class="alert_img"><img src="../../img/facial_img_1.png"></div>
+                <div class="alert_msg">
+                    <input class="form-control ng-pristine ng-untouched ng-valid ng-empty" id="planId" ng-model="planId" type="hidden" autocomplete="off">
+                    <input class="form-control ng-pristine ng-untouched ng-valid ng-empty" id="Hidden1" ng-model="planstatus" type="hidden" autocomplete="off">
+                    <h2>Are you sure you wish to perform this action?</h2>
+                    <ul class="alert_btns">
+                        <li><button class="btn_red" id="confirm_btn" ng-click="conform(e);">CONFIRM</button></li>
+                        <li><button class="btn_gray" id="cancel_btn" data-dismiss="modal">CANCEL</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    </div>

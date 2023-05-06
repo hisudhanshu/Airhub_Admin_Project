@@ -1,0 +1,277 @@
+<main id="main" class="main">
+    <div class="pagetitle">
+    </div>
+    <section class="section">
+       <div class="row">
+          <div class="col-lg-12">
+             <div class="card">
+                <div class="card-body">
+                   <h1 class="card-title">Manage Complaints</h1>
+                   <div class="row">
+                     <div class="col-lg-12">
+                        <div style="overflow-x:auto;">
+
+<div ng-view="" class="ng-scope">
+    <script type="text/javascript" class="ng-scope">
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#datatable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+        $('#ok_box').hide();
+        $('#confirm_btn').click(function () {
+            $('#confirm_box').hide()
+            //$('#ok_box').show();
+    
+        })
+        $('#cancel_btn').click(function () {
+            $('#confirm_box, #ok_box').hide();
+    
+        })
+        $('#ok_btn').click(function () {
+            $('#confirm_box, #ok_box').hide();
+        })
+        $(function () {
+            $('#modal').modal('hide');
+        });
+    
+        </script>
+      <main class="ng-scope">
+                   <div class="container-fluid">
+                      <div class="row page-wrapper-topbar align-items-center">
+                         <div class="col">
+                            <ol class="breadcrumb ">
+                               <!-- <li class="breadcrumb-item">Manage Complaints</li> -->
+                            </ol>
+                         </div>
+                         <div class="col text-right">
+                            <button type="button" class="btn btn-filter" id="filter-btn">
+                            <i class="lni lni-funnel"></i>
+                            <!-- <span class="filter-count">1</span> -->
+                            </button>
+                            <div id="dropdown-contentfilter" class="d-none">
+                               <div class="row">
+                                  <div class="col-lg-4 col-md-6 left-side">
+                                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                        <a class="nav-link active" id="v-pills-pvs-tab" data-toggle="pill" href="#v-pills-pvs" role="tab">Status</a>
+                                        <a class="nav-link" id="v-pills-pvcn-tab" data-toggle="pill" href="#v-pills-pvcn" role="tab">Company Name</a>
+                                     </div>
+                                  </div>
+                                  <div class="col-lg-8 col-md-6 right-side">
+                                     <div class="tab-content" id="v-pills-tabContent">
+                                        <div class="tab-pane fade show active" id="v-pills-pvs" role="tabpanel">
+                                           <p><input type="radio" name="status">Active</p>
+                                           <p><input type="radio" name="status">Inactive</p>
+                                        </div>
+                                        <div class="tab-pane fade" id="v-pills-pvcn" role="tabpanel">
+                                           <form class="ng-pristine ng-valid">
+                                              <input type="search" placeholder="Search..." class="form-control">
+                                           </form>
+                                           <p><input type="checkbox" name="supplier-name">S-sim</p>
+                                           <p><input type="checkbox" name="supplier-name">S-sim</p>
+                                           <p><input type="checkbox" name="supplier-name">S-sim</p>
+                                           <p><input type="checkbox" name="supplier-name">S-sim</p>
+                                           <p><input type="checkbox" name="supplier-name">S-sim</p>
+                                           <p><input type="checkbox" name="supplier-name">S-sim</p>
+                                           <p><input type="checkbox" name="supplier-name">S-sim</p>
+                                        </div>
+                                     </div>
+                                     <!-- tab content -->
+                                  </div>
+                               </div>
+                               <hr class="m-0">
+                               <div class="row">
+                                  <div class="col footer">
+                                     <button type="button" value="" class="btn btn-link">Clear All</button>
+                                     <button type="submit" value="" class="btn theme-btn btn-sm">Apply</button>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                         <!-- <a href="#!/ticketComplain" class="btn theme-btn">Create Complaint</a> -->
+                      </div>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <table id="datatable" class="table datatable-style-1" style="width:100%">
+                <thead>
+                <tr>
+                    <th>Complaint</th>
+                    <th>Product Type</th>
+                    <th>created Date &amp; time</th>
+                     <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- ngRepeat: e in TicketComplainList --><tr ng-repeat="e in TicketComplainList" class="ng-scope">
+                               <td class="ng-binding">Network Issue - Signal Strength</td>
+                               <td class="ng-binding">eSIM</td>            
+                               <td class="ng-binding">2022-03-21 02:54 PM</td>
+                                <td class="ng-binding">Active</td>
+                              <!-- <td style="width:15%">
+                                    <div class="dropdown">
+                                           <button class="btn " type="button" id="dropdownMenuAction" data-toggle="dropdown" aria-expanded="false">
+                                           <i class="fas fa-ellipsis-h"></i>
+                                           </button>
+                                           <ul class="dropdown-menu" aria-labelledby="dropdownMenuAction">
+                                              <li><a class="dropdown-item" ng-click="View(e);"><i class="lni lni-pencil"></i>Edit</a></li>
+                                              <li><a class="dropdown-item" ng-click="Approve(e);"><i class="lni lni-trash"></i>Delete</a></li>
+                                           </ul>
+                                        </div>
+                                  </td>-->
+                     <td style="width:20%">
+    
+                                       <!-- ngIf: (e.Status == '0')  --><div class="dropdown ng-scope" ng-if="(e.Status == '0') ">
+                                               <button class="btn " type="button" id="Button1" data-toggle="dropdown" aria-expanded="false">
+                                               <svg class="svg-inline--fa fa-ellipsis-h fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"></path></svg><!-- <i class="fas fa-ellipsis-h"></i> Font Awesome fontawesome.com -->
+                                               </button>
+                                               <ul class="dropdown-menu" aria-labelledby="dropdownMenuAction">
+                                                  <li><a class="dropdown-item" ng-click="View(e);"><i class="lni lni-pencil"></i>Edit</a></li>
+                                                 <li><a class="dropdown-item" ng-click="UnApprove(e);" data-toggle="modal" data-target="#confirm_box"><i class="lni lni-trash"></i>Deactivate</a></li>
+                                                  
+                                               </ul>
+                                            </div><!-- end ngIf: (e.Status == '0')  -->
+                                         <!-- ngIf: (e.Status == '1')  -->
+                                        
+                                        </td>
+    
+                          </tr><!-- end ngRepeat: e in TicketComplainList --><tr ng-repeat="e in TicketComplainList" class="ng-scope">
+                               <td class="ng-binding">APN setting not happening</td>
+                               <td class="ng-binding">eSIM</td>            
+                               <td class="ng-binding">2021-10-20 12:34 PM</td>
+                                <td class="ng-binding">Active</td>
+                              <!-- <td style="width:15%">
+                                    <div class="dropdown">
+                                           <button class="btn " type="button" id="dropdownMenuAction" data-toggle="dropdown" aria-expanded="false">
+                                           <i class="fas fa-ellipsis-h"></i>
+                                           </button>
+                                           <ul class="dropdown-menu" aria-labelledby="dropdownMenuAction">
+                                              <li><a class="dropdown-item" ng-click="View(e);"><i class="lni lni-pencil"></i>Edit</a></li>
+                                              <li><a class="dropdown-item" ng-click="Approve(e);"><i class="lni lni-trash"></i>Delete</a></li>
+                                           </ul>
+                                        </div>
+                                  </td>-->
+                     <td style="width:20%">
+    
+                                       <!-- ngIf: (e.Status == '0')  --><div class="dropdown ng-scope" ng-if="(e.Status == '0') ">
+                                               <button class="btn " type="button" id="Button1" data-toggle="dropdown" aria-expanded="false">
+                                               <svg class="svg-inline--fa fa-ellipsis-h fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"></path></svg><!-- <i class="fas fa-ellipsis-h"></i> Font Awesome fontawesome.com -->
+                                               </button>
+                                               <ul class="dropdown-menu" aria-labelledby="dropdownMenuAction">
+                                                  <li><a class="dropdown-item" ng-click="View(e);"><i class="lni lni-pencil"></i>Edit</a></li>
+                                                 <li><a class="dropdown-item" ng-click="UnApprove(e);" data-toggle="modal" data-target="#confirm_box"><i class="lni lni-trash"></i>Deactivate</a></li>
+                                                  
+                                               </ul>
+                                            </div><!-- end ngIf: (e.Status == '0')  -->
+                                         <!-- ngIf: (e.Status == '1')  -->
+                                        
+                                        </td>
+    
+                          </tr><!-- end ngRepeat: e in TicketComplainList --><tr ng-repeat="e in TicketComplainList" class="ng-scope">
+                               <td class="ng-binding">Data issue</td>
+                               <td class="ng-binding">eSIM</td>            
+                               <td class="ng-binding">2021-10-06 10:25 PM</td>
+                                <td class="ng-binding">Active</td>
+                              <!-- <td style="width:15%">
+                                    <div class="dropdown">
+                                           <button class="btn " type="button" id="dropdownMenuAction" data-toggle="dropdown" aria-expanded="false">
+                                           <i class="fas fa-ellipsis-h"></i>
+                                           </button>
+                                           <ul class="dropdown-menu" aria-labelledby="dropdownMenuAction">
+                                              <li><a class="dropdown-item" ng-click="View(e);"><i class="lni lni-pencil"></i>Edit</a></li>
+                                              <li><a class="dropdown-item" ng-click="Approve(e);"><i class="lni lni-trash"></i>Delete</a></li>
+                                           </ul>
+                                        </div>
+                                  </td>-->
+                     <td style="width:20%">
+    
+                                       <!-- ngIf: (e.Status == '0')  --><div class="dropdown ng-scope" ng-if="(e.Status == '0') ">
+                                               <button class="btn " type="button" id="Button1" data-toggle="dropdown" aria-expanded="false">
+                                               <svg class="svg-inline--fa fa-ellipsis-h fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"></path></svg><!-- <i class="fas fa-ellipsis-h"></i> Font Awesome fontawesome.com -->
+                                               </button>
+                                               <ul class="dropdown-menu" aria-labelledby="dropdownMenuAction">
+                                                  <li><a class="dropdown-item" ng-click="View(e);"><i class="lni lni-pencil"></i>Edit</a></li>
+                                                 <li><a class="dropdown-item" ng-click="UnApprove(e);" data-toggle="modal" data-target="#confirm_box"><i class="lni lni-trash"></i>Deactivate</a></li>
+                                                  
+                                               </ul>
+                                            </div><!-- end ngIf: (e.Status == '0')  -->
+                                         <!-- ngIf: (e.Status == '1')  -->
+                                        
+                                        </td>
+    
+                          </tr><!-- end ngRepeat: e in TicketComplainList --><tr ng-repeat="e in TicketComplainList" class="ng-scope">
+                               <td class="ng-binding">Service Issue</td>
+                               <td class="ng-binding">eSIM</td>            
+                               <td class="ng-binding">2021-06-19 03:05 PM</td>
+                                <td class="ng-binding">Active</td>
+                              <!-- <td style="width:15%">
+                                    <div class="dropdown">
+                                           <button class="btn " type="button" id="dropdownMenuAction" data-toggle="dropdown" aria-expanded="false">
+                                           <i class="fas fa-ellipsis-h"></i>
+                                           </button>
+                                           <ul class="dropdown-menu" aria-labelledby="dropdownMenuAction">
+                                              <li><a class="dropdown-item" ng-click="View(e);"><i class="lni lni-pencil"></i>Edit</a></li>
+                                              <li><a class="dropdown-item" ng-click="Approve(e);"><i class="lni lni-trash"></i>Delete</a></li>
+                                           </ul>
+                                        </div>
+                                  </td>-->
+                     <td style="width:20%">
+    
+                                       <!-- ngIf: (e.Status == '0')  --><div class="dropdown ng-scope" ng-if="(e.Status == '0') ">
+                                               <button class="btn " type="button" id="Button1" data-toggle="dropdown" aria-expanded="false">
+                                               <svg class="svg-inline--fa fa-ellipsis-h fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"></path></svg><!-- <i class="fas fa-ellipsis-h"></i> Font Awesome fontawesome.com -->
+                                               </button>
+                                               <ul class="dropdown-menu" aria-labelledby="dropdownMenuAction">
+                                                  <li><a class="dropdown-item" ng-click="View(e);"><i class="lni lni-pencil"></i>Edit</a></li>
+                                                 <li><a class="dropdown-item" ng-click="UnApprove(e);" data-toggle="modal" data-target="#confirm_box"><i class="lni lni-trash"></i>Deactivate</a></li>
+                                                  
+                                               </ul>
+                                            </div><!-- end ngIf: (e.Status == '0')  -->
+                                         <!-- ngIf: (e.Status == '1')  -->
+                                        
+                                        </td>
+    
+                          </tr><!-- end ngRepeat: e in TicketComplainList -->
+            </tbody>
+        </table>    
+                                </div>
+                            </div>                           
+                       </div>
+                    </main>
+    
+    <div id="ok_box" class="modal ng-scope" style="display: none;">
+                <div class="alert_box">
+                    <div class="alert_content">
+                        <div class="alert_img"><img src="../../img/facial_img_2.png"></div>
+                        <div class="alert_msg">
+                            <h2>Action Performed Successfully!</h2>
+                            <ul class="alert_btns">
+                                <li><button id="cancel_btn" class="btn btn-outline mr-4" data-dismiss="modal">Ok</button></li>
+    
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+    
+           </div>
+       <!--  </div>-->
+    <div id="confirm_box" class="modal ng-scope" style="display:none">
+        <div class="alert_box">
+                    <div class="alert_content">
+                            <div class="alert_img"><img src="../../img/facial_img_1.png"></div>
+                            <div class="alert_msg">
+                                <input class="form-control ng-pristine ng-untouched ng-valid ng-empty" id="planId" ng-model="planId" type="hidden" autocomplete="off">
+                                <input class="form-control ng-pristine ng-untouched ng-valid ng-empty" id="Hidden1" ng-model="planstatus" type="hidden" autocomplete="off">
+                                <h2>Are you sure you wish to perform this action?</h2>
+                                <ul class="alert_btns">
+                                    <li><button class="btn_red" id="confirm_btn" ng-click="conform(e);">CONFIRM</button></li>
+                                    <li><button class="btn_gray" id="Button3" data-dismiss="modal">CANCEL</button></li>
+                                </ul>
+                            </div>
+                    </div>
+                </div>
+    </div>
+    </div></div></div></div></div></div></div></div></section></main>
